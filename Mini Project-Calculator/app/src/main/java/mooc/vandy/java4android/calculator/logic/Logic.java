@@ -16,6 +16,10 @@ public class Logic
      */
     protected ActivityInterface mOut;
 
+    private final static int ADD = 1;
+    private final static int SUB = 2;
+    private final static int MUL = 3;
+    private final static int DIV = 4;
     /**
      * Constructor initializes the field.
      */
@@ -30,6 +34,25 @@ public class Logic
                         int argumentTwo,
                         int operation){
         // TODO -- start your code here
-        
+        switch (operation)
+        {
+            case ADD:
+                Add add = new Add(argumentOne,argumentTwo,mOut);
+                add.add();
+                break;
+            case SUB:
+                Subtract sub = new Subtract(argumentOne,argumentTwo,mOut);
+                sub.sub();
+                break;
+            case MUL:
+                Multiply mul = new Multiply(argumentOne,argumentTwo,mOut);
+                mul.mul();
+                break;
+            case DIV:
+                Divide div = new Divide(argumentOne,argumentTwo,mOut);
+                div.div();
+                break;
+        }
+
     }
 }
