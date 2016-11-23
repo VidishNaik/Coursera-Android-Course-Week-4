@@ -16,10 +16,13 @@ public class Logic
      */
     protected ActivityInterface mOut;
 
+    /**
+     * Initilializing final static variables ADD,SUBTRACT,MULTIPLY,DIVIDE
+     */
     private final static int ADD = 1;
-    private final static int SUB = 2;
-    private final static int MUL = 3;
-    private final static int DIV = 4;
+    private final static int SUBTRACT = 2;
+    private final static int MULTIPLY = 3;
+    private final static int DIVIDE = 4;
     /**
      * Constructor initializes the field.
      */
@@ -37,20 +40,20 @@ public class Logic
         switch (operation)
         {
             case ADD:
-                Add add = new Add(argumentOne,argumentTwo,mOut);
-                add.add();
+                Add addition = new Add(argumentOne,argumentTwo,mOut); // Create new Add Object
+                addition.perform(); // Perform Addition
                 break;
-            case SUB:
-                Subtract sub = new Subtract(argumentOne,argumentTwo,mOut);
-                sub.sub();
+            case SUBTRACT:
+                Subtract subtraction = new Subtract(argumentOne,argumentTwo,mOut); // Create new Subtract Object
+                subtraction.perform(); //Perform Subtraction
                 break;
-            case MUL:
-                Multiply mul = new Multiply(argumentOne,argumentTwo,mOut);
-                mul.mul();
+            case MULTIPLY:
+                Multiply multiplication = new Multiply(argumentOne,argumentTwo,mOut); // Create new Multiply Object
+                multiplication.perform(); //Perform Multiplication
                 break;
-            case DIV:
-                Divide div = new Divide(argumentOne,argumentTwo,mOut);
-                div.div();
+            case DIVIDE:
+                Divide division = new Divide(argumentOne,argumentTwo,mOut); // Create new Divide Object
+                division.perform(); //Perform Division
                 break;
         }
 
